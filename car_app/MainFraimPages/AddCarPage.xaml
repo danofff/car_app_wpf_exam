@@ -1,0 +1,472 @@
+﻿<Page x:Class="car_app.MainFraimPages.AddCarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:car_app.MainFraimPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="AddCarPage">
+
+    <Grid Background="#FCF3E1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TabControl
+            Background="#FCF3E1"
+            Foreground="#615D56"
+            Grid.Row="0"
+            Grid.ColumnSpan="2">
+            <TabItem x:Name="Details"
+                     Selector.IsSelected="True"
+                     >
+                <TabItem.Header>Детали</TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Content="Детали"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#615D56"></Label>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Content="Гаражный номер машины"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <TextBox
+                        Name="RoomNumber"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </TextBox>
+
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Content="Производитель"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <ComboBox 
+                        Name="Manufacturer"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+
+                    </ComboBox>
+
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           Content="Модель"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <ComboBox 
+                        Name="Model"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+
+                    </ComboBox>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="0"
+                           Content="Год выпуска"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <TextBox
+                        Name="Year"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </TextBox>
+
+                    <Label Grid.Row="5"
+                           Grid.Column="0"
+                           Content="Префикс"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <ComboBox 
+                        Name="Prefix"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+
+                    </ComboBox>
+
+                    <Label Grid.Row="6"
+                           Grid.Column="0"
+                           Content="Серийный номер"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <TextBox
+                        Name="Serial"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </TextBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Using">
+                <TabItem.Header>Использование</TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Content="Последняя запись"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#615D56"></Label>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Content="Дата последнего использования"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <DatePicker
+                        Name="LastDate"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </DatePicker>
+
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Content="Посделние мото-часы"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <TextBox 
+                        Name="LastMeter"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </TextBox>
+
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           Content="Общая наработка"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <TextBox 
+                        Name="TotalMeter"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+                    </TextBox>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="0"
+                           Content="Активная"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <CheckBox
+                        Name="IsActive"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        Padding="0 10 0 0">
+                    </CheckBox>
+
+                    <Label Grid.Row="5"
+                           Grid.Column="0"
+                           Content="КТГ"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <CheckBox 
+                        Name="IsKTG"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+                    </CheckBox>
+
+                    <Label Grid.Row="6"
+                           Grid.Column="0"
+                           Content="Консервация"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <CheckBox
+                        Name="IsPreserved"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </CheckBox>
+                    <Label Grid.Row="7"
+                           Grid.Column="0"
+                           Content="Мото-часы"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <CheckBox
+                        Name="IsMetered"
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </CheckBox>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Amortisation">
+                <TabItem.Header>Амортизация</TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Content="Настройка амортизации"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#615D56"></Label>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Content="Вид амортизации"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <CheckBox
+                        Name="AmortType"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </CheckBox>
+
+                    <Border Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="100 0 0 0"
+                            Padding="10 5 50 0"
+                            Background="#DFF0D8"
+                            BorderBrush="#3E7A2E"
+                            BorderThickness="1"
+                           >
+                        <StackPanel
+                            Margin="10 5 0 5">
+                            <TextBlock
+                                Foreground="#3E7A2E"
+                                FontWeight="Bold"
+                                >
+                                1-й метод - Линейный метод
+                            </TextBlock>
+                            <TextBlock
+                                Foreground="#3E7A2E"
+                                FontWeight="Bold">
+                                2-й метод - Метод уменьшаемого остатка
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           Content="Полная стоимость"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <TextBox 
+                        Name="Price"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+                    </TextBox>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="0"
+                           Content="Срок службы"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <TextBox
+                        Name="LifeCycle"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+                    </TextBox>
+
+                    <Label Grid.Row="5"
+                           Grid.Column="0"
+                           Content="Коэффициент ускорения"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56">
+                    </Label>
+
+                    <TextBox 
+                        Name="SpeedKoef"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150"
+                        >
+                    </TextBox>
+
+                    <Label Grid.Row="6"
+                           Grid.Column="0"
+                           Content="Дата ввода в эксплуатацию"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 15 0"
+                           Foreground="#615D56"></Label>
+                    <DatePicker
+                        Name="EnterDate"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Height="25"
+                        Width="150">
+                    </DatePicker>
+
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="2"                           
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="18"
+               Foreground="Red"
+               Name="StatsInfo"></Label>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Name="Submit"
+            Content="Добавить"
+            Width="100"
+            Height="30"
+            HorizontalAlignment="Right"
+            Margin="0 0 15 0"
+            Background="#428BCA"
+            Foreground="#fff"
+            Click="Submit_Click"
+            >
+        </Button>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Name="Close"
+            Content="Close"
+            Width="100"
+            Height="30"
+            HorizontalAlignment="Left"
+            Margin="15 0 0 0"          
+            Background="#e5e5e5"
+            Foreground="#000"
+            Click="Close_Click">
+        </Button>
+    </Grid>
+</Page>

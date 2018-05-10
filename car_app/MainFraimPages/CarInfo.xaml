@@ -1,0 +1,197 @@
+﻿<Page x:Class="car_app.MainFraimPages.CarInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:car_app.MainFraimPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="CarInfo">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="280"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            BorderBrush="#f3f3f3"
+            BorderThickness="0 0 0 2"
+            Margin="0 0 0 10">
+
+            <StackPanel Orientation="Vertical">
+                <Label
+                    Name="SelectedCar"
+                    HorizontalAlignment="Right"
+                    FontSize="16"
+                    FontWeight="Bold">
+                </Label>
+                <Label
+                    Name="CurrentDate"
+                    HorizontalAlignment="Right"
+                    >
+                </Label>
+               
+            </StackPanel>
+           
+            
+        </Border>
+        
+        
+        <Grid Grid.Row="1"
+              Background="#fafafa"
+              Margin="0 0 0 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Content="Детали:"
+                FontSize="18">
+            </Label>
+
+            <DockPanel Grid.Row="1">
+                <Label
+                    Content="Производитель:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                </Label>
+                <TextBlock
+                    Name="ManufacturerTB"
+                    VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+            
+                <DockPanel Grid.Row="2">
+                    <Label
+                    Content="Модель:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+                    <TextBlock
+                    Name="ModelTB"
+                    VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="3">
+                    <Label
+                    Content="Год выпуска:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+                    <TextBlock
+                    Name="YearTB"
+                    VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="4">
+                    <Label
+                    Content="Серийный номер:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+                    <TextBlock
+                    Name="SerialTB"
+                    VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+                <DockPanel Grid.Row="6">
+                    <Label
+                    Content="В день:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+                    <TextBlock
+                    Name="InDayTB"
+                    VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+                <DockPanel Grid.Row="7">
+                    <Label
+                    Content="В неделю:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+                    <TextBlock
+                    Name="InWeekTB"
+                    VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+
+
+                <DockPanel Grid.Row="8">
+                    <Label
+                    Content="Статус машины:"
+                    FontWeight="Bold"
+                    VerticalAlignment="Center">
+                    </Label>
+
+                    <WrapPanel
+                        VerticalAlignment="Bottom">
+                        <TextBlock
+                            Name="IsActive"
+                            >
+                        </TextBlock>
+                        <TextBlock
+                            Name="IsKTG"
+                            >
+                        </TextBlock>
+                        <TextBlock
+                            Name="IsMeter"
+                            >
+                        </TextBlock>
+                        
+                    </WrapPanel>
+                </DockPanel>
+
+            </Grid>
+            <Border Grid.Row="2"
+                    Grid.ColumnSpan="2">
+                <TabControl>
+                    <TabItem
+                        x:Name="Moto">
+                        <TabItem.Header>Наработанные мото-часы</TabItem.Header>
+                        <DataGrid                                
+                                Name="GarageList"
+                                RowBackground="#fff"
+                                AlternatingRowBackground="#f9f9f9"
+                                Foreground="#556F76"                         
+                                HorizontalGridLinesBrush="#ededed"
+                                VerticalGridLinesBrush="#ededed">
+                            <DataGrid.Resources>
+                                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                    <Style.Setters>
+                                        <Setter Property="Background" Value="#fff" />
+                                        <Setter Property="Height" Value="30" />
+                                    </Style.Setters>
+                                </Style>
+                            </DataGrid.Resources>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem IsEnabled="False">
+                        <TabItem.Header>Выполненные работы</TabItem.Header>
+                    </TabItem>
+                    <TabItem IsEnabled="False">
+                        <TabItem.Header>Список агрегатов</TabItem.Header>
+                    </TabItem>
+                    
+                </TabControl>
+                
+            </Border>
+    </Grid>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,65 @@
+﻿<Page x:Class="car_app.MainFraimPages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:car_app.MainFraimPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="HomePage"
+      Loaded="HomePage_Loaded">
+    <Page.Resources>
+        <Style x:Key="AddButtonStyle">
+            <Setter Property="Control.Background" Value="#35aa47" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+            <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+            <Setter Property="Control.Padding" Value="10 5 5 10" />
+            <Setter Property="Control.Margin" Value="20 10 0 10" />
+
+        </Style>
+       
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="12*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0"
+                Background="#ebfcee"
+                 Margin="0 0 0 10">
+            <Button
+                Name="AddCar"
+                Content="+ Добавить машину"
+                Style="{StaticResource AddButtonStyle}"
+                Click="AddCar_Click"></Button>
+        </Border>
+        <DataGrid
+            Grid.Row="1"
+            Name="CarsList"
+            RowBackground="#fff"
+            AlternatingRowBackground="#f9f9f9"
+            Foreground="#556F76"
+            MouseDoubleClick="CarsList_MouseDoubleClick"
+            HorizontalGridLinesBrush="#ededed"
+            VerticalGridLinesBrush="#ededed"
+            >
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Style.Setters>
+                        <Setter Property="Background" Value="#ddd" />
+                        <Setter Property="Height" Value="30" />
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#fff" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+        
+    </Grid>
+</Page>
